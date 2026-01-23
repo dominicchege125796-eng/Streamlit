@@ -1,7 +1,7 @@
 import streamlit as st
 name = st.text_input("Enter your Names", "Type here")
 Gender = st.radio("Choose gender" , ['Male', 'Female', 'Others`'])
-age = st.slider("Choose your Age ", min_value = 10, max_value = 30)
+age = st.number_input("Choose your Age ", min_value = 10, max_value = 30 )
 st.write("Fill in your marks ")
 maths = st.number_input("Maths", value=0.0)
 os = st.number_input("Operating Systems", value=0.0)
@@ -26,3 +26,4 @@ if st.button("Calculate"):
     st.write(f"Age : {age}" )
     st.write(f"Average : {average}" )
     st.write(f"Grade : {message} " )
+
