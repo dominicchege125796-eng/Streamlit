@@ -1,4 +1,6 @@
 import streamlit as st
+
+st.header("Welcome to my Grading (Dominic)")
 name = st.text_input("Enter your Names", "Type here")
 Gender = st.radio("Choose gender" , ['Male', 'Female', 'Others`'])
 age = st.number_input("Choose your Age ", min_value = 10, max_value = 30 )
@@ -26,4 +28,5 @@ if st.button("Calculate"):
     st.write(f"Age : {age}" )
     st.write(f"Average : {average}" )
     st.write(f"Grade : {message} " )
+
 
