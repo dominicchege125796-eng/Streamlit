@@ -43,6 +43,7 @@ st.markdown(
     /* Main App Background (Sky Blue) */
     .stApp {
         background-color:#87CEEB; 
+        color : white;
     }
     /* Text Color (Changed from red to black for high visibility) */
     .stApp h1, .stApp h2, .stApp h3, .stApp p, .stApp label {
@@ -127,3 +128,4 @@ if st.button("View Books Available"):
         conn.close()
     except Exception as e:
         st.error(f"Error loading data: {e}")
+
