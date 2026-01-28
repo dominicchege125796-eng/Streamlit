@@ -10,6 +10,16 @@ def get_db_connection():
         password="",
         database="Library01"
     )
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-color:#2A4B7C;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 st.header("Library Management System")
 
