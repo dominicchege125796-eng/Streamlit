@@ -8,7 +8,7 @@ def get_db_connection():
         host="library-db-dominicchege125796-9e8b.h.aivencloud.com",
         user="avnadmin",
         port=20013, # Port must be an integer
-        password="",
+        password="AVNS_5ETFXGZl1A3VlHfHenm",
         database="defaultdb"
     )
 
