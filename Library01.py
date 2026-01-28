@@ -8,7 +8,7 @@ def get_db_connection():
         host="library-db-dominicchege125796-9e8b.h.aivencloud.com",
         user="avnadmin",
         port=20013, 
-        password="AVNS_5ETFXGZl1A3VlHfHenm",
+        password="",
         database="defaultdb"
     )
 
@@ -128,6 +128,7 @@ if st.button("View Books Available"):
         conn.close()
     except Exception as e:
         st.error(f"Error loading data: {e}")
+
 
 
 
