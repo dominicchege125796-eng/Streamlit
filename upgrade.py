@@ -14,8 +14,10 @@ def grade(avg):
         return "Proficient"
     elif avg >= 40:
         return "Pass"
-    else:
+    elif 40 > avg > 0:
         return "Fail"
+    elif avg == 0 :
+        return "missing mark"
 
 # ---------------- FILE UPLOAD ----------------
 st.sidebar.header("📁 Upload Data")
@@ -42,13 +44,15 @@ st.sidebar.header("Filters")
 
 filter_option = st.sidebar.selectbox(
     "Select View",
-    ["All Students", "Top 3 Students", "Failing Students"]
+    ["All Students", "Top 3 Students", "Failing Students", "Missing Marks"]
 )
 
 if filter_option == "Top 3 Students":
     df_view = df.sort_values(by="Average", ascending=False).head(3)
 elif filter_option == "Failing Students":
     df_view = df[df["Average"] < 40]
+elif filter_option == "Missing Marks":
+    df_view = df[df["Average"] == 0]
 else:
     df_view = df
 
@@ -59,18 +63,20 @@ st.dataframe(df_view, use_container_width=True)
 # ---------------- ANALYTICS ----------------
 st.subheader("Key Metrics")
 
-col1, col2, col3 = st.columns(3)
+col1, col2, col3, col4, col5 = st.columns(5)
 
 col1.metric("Class Average", f"{df['Average'].mean():.2f}")
 col2.metric("Top Score", f"{df['Average'].max():.2f}")
-col3.metric("Fail Count", len(df[df["Average"] < 40]))
+col3.metric("Lowest Score", f"{df['Average'].min():.2f}")
+col4.metric("Fail Count", len(df[df["Average"] < 40]))
+col5.metric("Missing Marks",len(df[df["Average"] == 0]))
 
 # ---------------- CHARTS ----------------
 st.subheader("📈 Performance Visualization")
 
 fig, ax = plt.subplots()
 ax.bar(df["Name"], df["Average"])
-ax.set_title("Student Average Scores")
+ax.set_title("Student Average Representation")
 ax.set_ylabel("Average")
 st.pyplot(fig)
 
