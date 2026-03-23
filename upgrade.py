@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 st.set_page_config(page_title="Pro Student Analytics", layout="wide")
 
-st.title("📊 PRO Student Performance Dashboard")
+st.title("Student Performance Dashboard")
 
 # ---------------- GRADE FUNCTION ----------------
 def grade(avg):
